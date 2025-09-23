@@ -1,6 +1,5 @@
 import { useState } from "react";
-
-const AddTickets = () => {
+const AddCategory = () => {
   const [visible, setVisible] = useState(false);
   const handleCancle = () => {
     setVisible(!visible);
@@ -8,17 +7,16 @@ const AddTickets = () => {
   return (
     <div
       className={`flex justify-center items-center bg-black w-screen h-screen backdrop-blur-xl ${
-        visible ? "" : "hidden"
+        !visible ? "" : "hidden"
       }`}
     >
-      Hello world
       <div className="bg-white p-9 w-[518px] h-[316px] rounded-[8px]">
         <div className=" w-full flex flex-col gap-[36px]">
           {/* Headline */}
           <div className="flex flex-row items-center justify-between">
             <span className="p-3">
               <h2 className="text-[24px] font-[500] text-[#374151]">
-                Add Ticket Class
+                Add Category
               </h2>
             </span>
             <span className="w-[36px] h-[36px]" onClick={handleCancle}>
@@ -34,17 +32,18 @@ const AddTickets = () => {
           <form action="#">
             <div className="flex flex-col gap-2.5">
               <label className="h-[24px] text-[16px] font-medium text-[#1F2937]">
-                Ticket Class Name
+                Category Name
               </label>
               <input
                 type="text"
                 name="name"
                 required
-                placeholder="Enter Class Name"
+                placeholder="Enter Category Name"
                 className="px-[16px] py-[12px] border-[1px] border-[E8E8E8#] rounded-[4px] font-medium text-[14px] text-[#6E767A] placeholder-[#8D8D8D] active:outline-none focus:outline-none"
               />
               <p className="text-[12px] font-normal text-[#6B6F80]">
-                This will be displayed as a column in the policy matrix.
+                After adding a category, you'll be able to add subcategories to
+                it.
               </p>
             </div>
           </form>
@@ -53,7 +52,7 @@ const AddTickets = () => {
               Cancel
             </button>
             <button className="w-[218px] h-[44px] bg-[#0D47A1] rounded-[4px] text-[16px] text-white font-medium hover:bg-[#1565C0] transition">
-              Add Ticket Class
+              Add Category
             </button>
           </div>
         </div>
@@ -62,4 +61,4 @@ const AddTickets = () => {
   );
 };
 
-export default AddTickets;
+export default AddCategory;
