@@ -2,9 +2,22 @@ import React, { useState } from "react";
 
 const AddSubCategory = () => {
   const [visible, setVisible] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("");
 
   const handleCancel = () => {
     setVisible(!visible);
+  };
+
+  const subCategory = [
+    "Refund Ticket Type",
+    "Change Ticket Type",
+    "Cancel Ticket Type",
+  ];
+
+  const handleSelect = (item) => {
+    setSelectedCategory(item);
+    setDropdownOpen(false);
   };
 
   return (
@@ -41,24 +54,36 @@ const AddSubCategory = () => {
               >
                 Category
               </label>
-              <span className="relative flex items-center">
+              <span className="relative flex flex-col">
                 <input
                   id="category"
                   name="category"
-                  className="w-full h-[52px] border border-[#C6C6C6] rounded-[8px] px-3 text-[16px] text-[#202020] placeholder-[#8D8D8D] active:outline-none focus:outline-none"
+                  value={selectedCategory}
+                  readOnly
+                  className="w-full h-[52px] border border-[#C6C6C6] rounded-[8px] px-3 text-[16px] text-[#202020] placeholder-[#8D8D8D] active:outline-none focus:outline-none cursor-pointer"
                   placeholder="Select Category"
+                  onClick={() => setDropdownOpen(!dropdownOpen)}
                 />
-                <button
-                  type="button"
-                  className="cursor-pointer flex justify-center items-center"
-                  onClick={() => {}}
-                >
-                  <img
-                    className="w-[24px] h-[24px] absolute right-3 cursor-pointer"
-                    src="/src/assets/Icons/akar-icons_chevron-down.svg"
-                    alt="dropdown"
-                  />
-                </button>
+                <img
+                  className="w-[24px] h-[24px] absolute right-3 top-1/2 -translate-y-1/2 cursor-pointer"
+                  src="/src/assets/Icons/akar-icons_chevron-down.svg"
+                  alt="dropdown"
+                  onClick={() => setDropdownOpen(!dropdownOpen)}
+                />
+                {/* Dropdown */}
+                {dropdownOpen && (
+                  <ul className="absolute top-[56px] w-full bg-white border border-[#C6C6C6] rounded-[8px] shadow-md z-10">
+                    {subCategory.map((item, index) => (
+                      <li
+                        key={index}
+                        className="px-3 py-2 hover:bg-gray-100 cursor-pointer text-[16px] text-[#202020]"
+                        onClick={() => handleSelect(item)}
+                      >
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </span>
 
               {/* Sub Category */}
