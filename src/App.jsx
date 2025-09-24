@@ -1,6 +1,7 @@
 import AddTickets from "./modules/AddTickets";
 import AddCategory from "./modules/AddCategory";
 import Login from "./Pages/Login";
+import AddSubCategory from "./modules/AddSubCategory";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Login />
       <AddTickets />
       <AddCategory />
+      <AddSubCategory />
     </>
   );
 }
