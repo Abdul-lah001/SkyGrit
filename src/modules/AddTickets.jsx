@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const AddTickets = () => {
   const [visible, setVisible] = useState(false);
-  const handleCancle = () => {
+  const handleCancel = () => {
     setVisible(!visible);
   };
   return (
@@ -20,7 +20,7 @@ const AddTickets = () => {
                 Add Ticket Class
               </h2>
             </span>
-            <span className="w-[36px] h-[36px]" onClick={handleCancle}>
+            <span className="w-[36px] h-[36px]" onClick={handleCancel}>
               <img
                 className="w-full"
                 src="/src/assets/Icons/Cancel.svg"

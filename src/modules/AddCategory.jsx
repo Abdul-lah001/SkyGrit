@@ -1,7 +1,7 @@
 import { useState } from "react";
 const AddCategory = () => {
   const [visible, setVisible] = useState(false);
-  const handleCancle = () => {
+  const handleCancel = () => {
     setVisible(!visible);
   };
   return (
@@ -19,7 +19,7 @@ const AddCategory = () => {
                 Add Category
               </h2>
             </span>
-            <span className="w-[36px] h-[36px]" onClick={handleCancle}>
+            <span className="w-[36px] h-[36px]" onClick={handleCancel}>
               <img
                 className="w-full"
                 src="/src/assets/Icons/Cancel.svg"
