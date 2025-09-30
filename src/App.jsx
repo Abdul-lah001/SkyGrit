@@ -3,16 +3,18 @@ import AddCategory from "./modules/AddCategory";
 import Login from "./Pages/Login";
 import AddSubCategory from "./modules/AddSubCategory";
 import RemoveTicketClass from "./modules/removeTicketClass";
+import Request from "./dashboards/Request";
 
 function App() {
   return (
     <>
       <section>
-        <Login />
+        {/* <Login />
         <AddTickets />
         <AddCategory />
         <AddSubCategory />
-        <RemoveTicketClass />
+        <RemoveTicketClass /> */}
+        <Request />
       </section>
     </>
   );
