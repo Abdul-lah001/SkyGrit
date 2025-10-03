@@ -1,5 +1,3 @@
-import React from "react";
-
 const RefundTable = () => {
   const headFields = [
     "Request ID",
@@ -148,31 +146,31 @@ const RefundTable = () => {
           {data.map((item, rowIndex) => (
             <tr
               key={rowIndex}
-              className="hover:bg-gray-50 transition-colors duration-200"
+              className="hover:bg-gray-50 transition-colors duration-200 "
             >
-              <td className="px-4 py-2 border-b border-gray-200 text-[13px] text-[#263238]">
+              <td className="px-4 py-4 border-b border-gray-200 text-[13px] text-[#263238]">
                 {item.id}
               </td>
-              <td className="px-4 py-2 border-b border-gray-200 text-[13px] text-[#263238]">
+              <td className="px-4 py-4 border-b border-gray-200 text-[13px] text-[#263238]">
                 {item.date}
               </td>
-              <td className="px-4 py-2 border-b border-gray-200 text-[13px] text-[#263238]">
+              <td className="px-4 py-4 border-b border-gray-200 text-[13px] text-[#263238]">
                 {item.customerName}
               </td>
-              <td className="px-4 py-2 border-b border-gray-200 text-[13px] text-[#263238]">
+              <td className="px-4 py-4 border-b border-gray-200 text-[13px] text-[#263238]">
                 {item.type}
               </td>
-              <td className="px-4 py-2 border-b border-gray-200 text-[13px] text-[#263238]">
+              <td className="px-4 py-4 border-b border-gray-200 text-[13px] text-[#263238]">
                 {item.email}
               </td>
-              <td className="px-4 py-2 border-b border-gray-200 text-[13px] text-[#263238]">
+              <td className="px-4 py-4 border-b border-gray-200 text-[13px] text-[#263238]">
                 {item.amount}
               </td>
-              <td className="px-4 py-2 border-b border-gray-200 text-[13px] text-[#263238]">
+              <td className="px-4 py-4 border-b border-gray-200 text-[13px] text-[#263238]">
                 {item.refundValue}
               </td>
               <td
-                className={`px-4 py-2 border-b border-gray-200 font-medium ${
+                className={`px-4 py-4 border-b border-gray-200 font-medium ${
                   item.status === "Processed"
                     ? "text-green-600"
                     : item.status === "Pending"
